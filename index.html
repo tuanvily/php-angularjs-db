@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body ng-app="myApp" ng-controller="myCtrl"">
+<div id="main">
 	<div id="form">
 		<form>
 			Full Name: <input type="text" ng-model="fullName" name="fullName">
@@ -32,9 +33,20 @@
 					<td>{{person.id}}</td>
 					<td>{{person.fullName}}</td>
 					<td>{{person.gender}}</td>
+					<td><button ng-click="delPerson(person.id)">Delete</button></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+	<div id="footer">
+		&copy;2017
+	</div>
+	<div id="header">
+		PHP AngularJS Test
+	</div>
+	<div id="extra">
+		<p ng-if="message!==''">{{message}}</p>
+	</div>
+</div>
 </body>
 </html>

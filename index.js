@@ -4,10 +4,21 @@ app.controller('myCtrl', function($scope, $http) {
 		$http.post("addPerson.php", {'fullName': $scope.fullName, 'gender': $scope.gender})
 		.then(function(res, err) {
 			if (err) {
-				console.log("error");
 				console.log(err);
 			} else {
-				console.log(res.data);
+				$scope.message = `${res.data.message} id: ${res.data.id}`;
+				$scope.getAll();
+			}
+		});
+	}
+
+	$scope.delPerson = function(_id) {
+		$http.post("delPerson.php", {'id': _id})
+		.then(function(res, err) {
+			if (err) {
+				console.log(err);
+			} else {
+				$scope.message = `${res.data.message} id: ${res.data.id}`;
 				$scope.getAll();
 			}
 		});
@@ -20,7 +31,7 @@ app.controller('myCtrl', function($scope, $http) {
 				console.log(err)
 			} else {
 				$scope.data = res.data;
-				console.log(res);
+				//console.log(res.data);
 			}
 		});
 	}

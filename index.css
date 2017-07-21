@@ -1,3 +1,36 @@
 table,th,td {
 	border: 1px solid black;
+	white-space: nowrap;
+}
+
+div#main {
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: min-content min-content auto;
+	grid-template-areas:
+		"header header extra"
+		"form view extra"
+		"footer footer extra";
+}
+
+div#header {
+	grid-area: header;
+	background: linear-gradient(to right, #099, red);
+}
+
+div#footer {
+	grid-area: footer;
+	background: linear-gradient(to right, red, #099);
+}
+
+div#extra {
+	grid-area: extra;
+	background: linear-gradient(to top, #099, red);
+	padding-left: 10px;
+	display: flex;
+	align-items: center;
+}
+
+div#view {
+	padding-left: 20px;
 }

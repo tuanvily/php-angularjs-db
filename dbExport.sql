@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `test`;
+
+DROP TABLE IF EXISTS `people`;
+CREATE TABLE IF NOT EXISTS `people` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fullName` varchar(60) NOT NULL,
+  `gender` varchar(6) NOT NULL DEFAULT 'Male',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1001 DEFAULT CHARSET=latin1;
